@@ -4,6 +4,8 @@ import customtkinter as ctk
 import uploader
 import browser
 
+current_path = os.path.dirname(os.path.abspath(__file__))
+
 def post(entry1, entry2, filepath, button_txt):
     username = entry1.get()
     password = entry2.get()
@@ -26,12 +28,15 @@ if __name__ == "__main__":
     ctk.set_default_color_theme("dark-blue") #dark-blue, blue or green
 
     root = ctk.CTk()
-    root.geometry("500x350")
+    root.title("Instagram Uploader")
+    icon_title_img=current_path+"\\icon.ico"
+    root.iconbitmap(icon_title_img)
+    root.geometry("600x400")
 
     frame = ctk.CTkFrame(master=root)
     frame.pack(pady=20, padx=60, fill="both", expand=True)
 
-    label = ctk.CTkLabel(master=frame, text="Login System")
+    label = ctk.CTkLabel(master=frame, text="Instagram Uploader")
     label.pack(pady=12, padx=10)
 
     entry1 = ctk.CTkEntry(master=frame, placeholder_text="Username")
@@ -39,13 +44,13 @@ if __name__ == "__main__":
     entry2 = ctk.CTkEntry(master=frame, placeholder_text="Password", show="*")
     entry2.pack(pady=12, padx=10)
 
+    text=""
+    button_txt = ctk.CTkEntry(master=frame, placeholder_text="Post text", width=250, height=30, justify='center')
+    button_txt.pack(pady=12, padx=10)
+
     filepath=""
     button_file = ctk.CTkButton(master=frame, text="Photo", command=lambda: selectfile())
     button_file.pack(pady=12, padx=10)
-
-    text=""
-    button_txt = ctk.CTkEntry(master=frame, placeholder_text="Post text")
-    button_txt.pack(pady=12, padx=10)
 
     button = ctk.CTkButton(master=frame, text="Post", command=lambda: post(entry1, entry2, button_file, button_txt))                     
     button.pack(pady=12, padx=10)
