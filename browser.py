@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-def post_to_instagram(path, username, password, photo, caption, share=False):
+def post_to_instagram(path, username, password, photo, caption, share=True):
     option = webdriver.ChromeOptions()
     #option.add_argument("--start-maximized")
     cService = webdriver.ChromeService(executable_path='./chromedriver.exe', options=option)
@@ -49,7 +49,7 @@ def post_to_instagram(path, username, password, photo, caption, share=False):
 
     time.sleep(1)
     pyautogui.hotkey("ctrl", "6")
-    pyautogui.typewrite(path + '\\' + photo)
+    pyautogui.typewrite(photo)
     time.sleep(1)
     pyautogui.hotkey("enter")
     time.sleep(1)
