@@ -47,7 +47,7 @@ if __name__ == "__main__":
     button_txt = ctk.CTkEntry(master=frame, placeholder_text="Post text")
     button_txt.pack(pady=12, padx=10)
 
-    button = ctk.CTkButton(master=frame, text="Login", command=lambda: login(entry1, entry2, button_file, button_txt))                     
+    button = ctk.CTkButton(master=frame, text="Post", command=lambda: login(entry1, entry2, button_file, button_txt))                     
     button.pack(pady=12, padx=10)
 
     root.mainloop()
