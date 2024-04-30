@@ -4,7 +4,7 @@ import customtkinter as ctk
 import uploader
 import browser
 
-def login(entry1, entry2, filepath, button_txt):
+def post(entry1, entry2, filepath, button_txt):
     username = entry1.get()
     password = entry2.get()
     filepath = os.environ['FILE_IMG']
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     button_txt = ctk.CTkEntry(master=frame, placeholder_text="Post text")
     button_txt.pack(pady=12, padx=10)
 
-    button = ctk.CTkButton(master=frame, text="Post", command=lambda: login(entry1, entry2, button_file, button_txt))                     
+    button = ctk.CTkButton(master=frame, text="Post", command=lambda: post(entry1, entry2, button_file, button_txt))                     
     button.pack(pady=12, padx=10)
 
     root.mainloop()
