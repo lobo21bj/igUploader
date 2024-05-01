@@ -6,14 +6,14 @@ import misc
 filename = os.path.splitext(os.path.basename(os.path.abspath(__file__)))[0]
 current_path = os.path.dirname(os.path.abspath(__file__))
 
-def post(entry1, entry2, filepath, button_txt, logger):
+def post(entry1, entry2, filepath, button_txt, filename, logger, root):
     username = entry1.get()
     password = entry2.get()
     filepath = os.environ['FILE_IMG']
     filepath = filepath.replace("/","\\")
     text = button_txt.get()
     logger.info("With the data entered hitting Instagram.com")
-    browser.post_to_instagram(browser.current_path, username, password, filepath, text, logger)
+    browser.post_to_instagram(browser.current_path, username, password, filepath, text, filename, logger, root)
     exit
 
 def selectfile():
@@ -53,7 +53,7 @@ if __name__ == "__main__":
     button_file.pack(pady=12, padx=10)
     logger.info("Media retreived")
 
-    button = ctk.CTkButton(master=frame, text="Post", command=lambda: post(entry1, entry2, button_file, button_txt, logger))                     
+    button = ctk.CTkButton(master=frame, text="Post", command=lambda: post(entry1, entry2, button_file, button_txt, filename, logger, root))                     
     button.pack(pady=12, padx=10)
 
     root.mainloop()

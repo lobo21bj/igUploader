@@ -16,7 +16,7 @@ def check_exists_by_xpath(browser, xpath):
         return False
     return True
 
-def post_to_instagram(path, username, password, photo, caption, logger):
+def post_to_instagram(path, username, password, photo, caption, filename, logger, root):
     logger.info("Setting up browser session...")
     option = webdriver.ChromeOptions()
     cService = webdriver.ChromeService(executable_path='./asset/chromedriver.exe', options=option)
@@ -91,3 +91,5 @@ def post_to_instagram(path, username, password, photo, caption, logger):
     logger.info("Content posted successfully")
     browser.close()
     browser.quit()
+    logger.info("##### Finished " + filename + " #####")
+    root.destroy()
