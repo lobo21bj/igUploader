@@ -87,7 +87,7 @@ def post_to_instagram(path, username, password, photo, caption, filename, logger
     share_xpath = "/html/body/div[6]/div[1]/div/div[3]/div/div/div/div/div/div/div/div[1]/div/div/div/div[3]/div/div"
     wait.until(EC.element_to_be_clickable((By.XPATH, share_xpath)))
     browser.find_element(By.XPATH, share_xpath).click()
-    time.sleep(120)
+    time.sleep(60)
     logger.info("Content posted successfully")
     browser.close()
     browser.quit()
