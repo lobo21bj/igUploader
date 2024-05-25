@@ -44,6 +44,8 @@ def post_to_instagram(path, username, password, photo, caption, filename, logger
     wait.until(EC.element_to_be_clickable((By.XPATH, cred_save_xpath)))
     browser.find_element(By.XPATH, cred_save_xpath).click()
 
+    #time.sleep(120)
+
     notifications_xpath = '/html/body/div[3]/div[1]/div/div[2]/div/div/div/div/div[2]/div/div/div[3]/button[2]'
     wait.until(EC.element_to_be_clickable((By.XPATH, notifications_xpath)))
     browser.find_element(By.XPATH, notifications_xpath).click()
@@ -57,7 +59,7 @@ def post_to_instagram(path, username, password, photo, caption, filename, logger
     select_file_xpath = '/html/body/div[6]/div[1]/div/div[3]/div/div/div/div/div/div/div/div[2]/div[1]/div/div/div[2]/div/button'
     wait.until(EC.element_to_be_clickable((By.XPATH, select_file_xpath)))
     browser.find_element(By.XPATH, select_file_xpath).click()
-
+    
     time.sleep(1)
     pyautogui.hotkey("ctrl", "6")
     pyautogui.typewrite(photo)
