@@ -1,5 +1,6 @@
 import os
 import customtkinter as ctk
+import emoji
 import browser
 import misc
 
@@ -8,7 +9,9 @@ current_path = os.path.dirname(os.path.abspath(__file__))
 
 def post(entry1, entry2, filepath, button_txt, filename, logger, root):
     username = entry1.get()
+    #username = 'seib.diego@gmail.com'
     password = entry2.get()
+    #password = 'Mentor1234'
     filepath = os.environ['FILE_IMG']
     filepath = filepath.replace("/","\\")
     text = button_txt.get()
