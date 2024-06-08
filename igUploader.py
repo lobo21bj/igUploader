@@ -9,12 +9,13 @@ current_path = os.path.dirname(os.path.abspath(__file__))
 
 def post(entry1, entry2, filepath, button_txt, filename, logger, root):
     username = entry1.get()
-    #username = 'seib.diego@gmail.com'
+    #username = ''
     password = entry2.get()
-    #password = 'Mentor1234'
+    #password = ''
     filepath = os.environ['FILE_IMG']
     filepath = filepath.replace("/","\\")
     text = button_txt.get()
+    #text = 'Le ponemos un poco de humor al viernes #mentalidad #millonarios #desarrollopersonal #negocios'
     logger.info("With the data entered hitting Instagram.com")
     browser.post_to_instagram(browser.current_path, username, password, filepath, text, filename, logger, root)
     exit
