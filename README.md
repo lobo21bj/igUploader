@@ -12,7 +12,10 @@ Build a solution to automate Instagram posting.
 - [x] Check how to crontab executions [Schedule Module](https://www.youtube.com/watch?v=oQmKKIYODYU).
 - [ ] How to handle log size.
 - [ ] Landing/processed directories, take files from there with format client_version_date.jpg/mp4
-- [ ] Add emoji logic [Emojis Module](https://emojis.readthedocs.io/en/latest/api.html#sample-code)
+- [ ] Add emoji logic
+- [Emojis Module](https://emojis.readthedocs.io/en/latest/api.html#sample-code)
+- [Rocket example](https://www.compart.com/en/unicode/U+1F680)
+- [Full list](https://www.unicode.org/emoji/charts/full-emoji-list.html)
 - [x] Logging.
 - [x] Handling different size of content.
 - [x] Close browser and app once post is done.
